@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Campaign Intake Tool</h1>
+    <form id="data_form">
+        <div class="form_group">
+            <label for="main_business_unit">Business Unit <span class="mandatory_indicator">*</span></label>
+            <select id="main_business_unit" name="main_business_unit" required>
+                <option value="">Select</option>
+                <option value="AMER">AMER</option>
+                <option value="EMEA">EMEA</option>
+                <option value="APAC">APAC</option>
+                <option value="GPS">GPS</option>
+            </select>
+        </div>
+
+        <div id="section_amer_emea_apac" class="conditional_section" style="display: none;">
+            <div class="form_row">
+                <div class="form_group">
+                    <label for="region_amer_emea_apac">Region <span class="mandatory_indicator">*</span></label>
+                    <select id="region_amer_emea_apac" name="region_amer_emea_apac">
+                        <option value="">Select</option>
+                        <option value="AMER">AMER</option>
+                        <option value="EMEA">EMEA</option>
+                        <option value="APAC">APAC</option>
+                    </select>
+                </div>
+                <div class="form_group">
+                    <label for="country_amer_emea_apac">Country</label>
+                    <input type="text" id="country_amer_emea_apac" name="country_amer_emea_apac">
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes" id="bunit_amer_emea_apac_grp">
+                <label>Domain <span class="mandatory_indicator">*</span></label>
+                <div class="checkbox_group" id="domain_amer_emea_apac_checkboxes">
+                    <div><input type="checkbox" id="domain_hvac_set1" name="domain_amer_emea_apac[]" value="HVAC"><label for="domain_hvac_set1">HVAC</label></div>
+                    <div><input type="checkbox" id="domain_fire_set1" name="domain_amer_emea_apac[]" value="Fire"><label for="domain_fire_set1">Fire</label></div>
+                    <div><input type="checkbox" id="domain_security_set1" name="domain_amer_emea_apac[]" value="Security"><label for="domain_security_set1">Security</label></div>
+                    <div><input type="checkbox" id="domain_controls_set1" name="domain_amer_emea_apac[]" value="Controls"><label for="domain_controls_set1">Controls</label></div>
+                    <div><input type="checkbox" id="domain_marine_navy_set1" name="domain_amer_emea_apac[]" value="Marine/Navy"><label for="domain_marine_navy_set1">Marine/Navy</label></div>
+                    <div><input type="checkbox" id="domain_digital_set1" name="domain_amer_emea_apac[]" value="Digital"><label for="domain_digital_set1">Digital</label></div>
+                    <div><input type="checkbox" id="domain_sustainable_infra_set1" name="domain_amer_emea_apac[]" value="Sustainable Infrastructure"><label for="domain_sustainable_infra_set1">Sustainable Infrastructure</label></div>
+                    <div><input type="checkbox" id="domain_industrial_refrig_set1" name="domain_amer_emea_apac[]" value="Industrial Refrigeration"><label for="domain_industrial_refrig_set1">Industrial Refrigeration</label></div>
+                    <div><input type="checkbox" id="domain_service_apac_set1" name="domain_amer_emea_apac[]" value="Service (APAC)"><label for="domain_service_apac_set1">Service (APAC)</label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section_gps" class="conditional_section" style="display: none;">
+            <div class="form_group form_group_checkboxes" id="bunit_gps_grp">
+                <label>Domain <span class="mandatory_indicator">*</span></label>
+                <div class="checkbox_group" id="domain_gps_checkboxes">
+                    <div><input type="checkbox" id="domain_fire_suppression_set2" name="domain_gps[]" value="Fire Suppression"><label for="domain_fire_suppression_set2">Fire Suppression</label></div>
+                    <div><input type="checkbox" id="domain_fire_detection_set2" name="domain_gps[]" value="Fire Detection"><label for="domain_fire_detection_set2">Fire Detection</label></div>
+                    <div><input type="checkbox" id="domain_hvac_set2" name="domain_gps[]" value="HVAC"><label for="domain_hvac_set2">HVAC</label></div>
+                    <div><input type="checkbox" id="domain_controls_set2" name="domain_gps[]" value="Controls"><label for="domain_controls_set2">Controls</label></div>
+                    <div><input type="checkbox" id="domain_iref_set2" name="domain_gps[]" value="IREF"><label for="domain_iref_set2">IREF</label></div>
+                    <div><input type="checkbox" id="domain_security_set2" name="domain_gps[]" value="Security"><label for="domain_security_set2">Security</label></div>
+                </div>
+            </div>
+            <div class="form_row">
+                <div class="form_group">
+                    <label for="region_gps">Region <span class="mandatory_indicator">*</span></label>
+                    <select id="region_gps" name="region_gps">
+                         <option value="">Select</option>
+                        <option value="AMER">AMER</option>
+                        <option value="LATAM">LATAM</option>
+                        <option value="EMEA">EMEA</option>
+                        <option value="APAC">APAC</option>
+                    </select>
+                </div>
+                <div class="form_group">
+                    <label for="brand_gps">Brand</label>
+                    <input type="text" id="brand_gps" name="brand_gps">
+                </div>
+            </div>
+        </div>
+
+        <hr class="section_divider">
+
+        <div class="form_row">
+            <div class="form_group">
+                <label for="campaign_owner">Campaign Owner <span class="mandatory_indicator">*</span></label>
+                <input type="text" id="campaign_owner" name="campaign_owner" required>
+            </div>
+            <div class="form_group">
+                <label for="program_name">Program Name <span class="mandatory_indicator">*</span></label>
+                <input type="text" id="program_name" name="program_name" required>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="department_responsible">Department Responsible <span class="mandatory_indicator">*</span></label>
+                <select id="department_responsible" name="department_responsible" required>
+                    <option value="">Select</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Ops">Ops</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="campaigns_alignment">10 Campaigns Alignment <span class="mandatory_indicator">*</span></label>
+                <select id="campaigns_alignment" name="campaigns_alignment" required>
+                    <option value="">Select</option>
+                    <option value="BSNA Brand">JCI Brand</option>
+                    <option value="Smart Buildings">Smart Buildings</option>
+                    <option value="OpenBlue">OpenBlue</option>
+                    <option value="Data Centers">Data Centers</option>
+                    <option value="Sustainable Infrastructure">Sustainable Infrastructure</option>
+                    <option value="HVAC-R">HVAC-R</option>
+                    <option value="Controls">Controls</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Security">Security</option>
+                    <option value="Services">Services</option>
+                </select>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="parent_campaign">Parent Campaign</label>
+                <input type="text" id="parent_campaign" name="parent_campaign">
+            </div>
+            <div class="form_group">
+                <label for="fy">FY <span class="mandatory_indicator">*</span></label>
+                <select id="fy" name="fy" required>
+                    <option value="">Select</option>
+                    <option value="FY25">FY25</option>
+                    <option value="FY26">FY26</option>
+                    <option value="Evergreen">Evergreen</option>
+                </select>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="quarter">Quarter</label>
+                <select id="quarter" name="quarter">
+                    <option value="">Select</option>
+                    <option value="Q1">Q1</option>
+                    <option value="Q2">Q2</option>
+                    <option value="Q3">Q3</option>
+                    <option value="Q4">Q4</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="marketing_phase">Marketing Phase</label>
+                <select id="marketing_phase" name="marketing_phase">
+                    <option value="">Select</option>
+                    <option value="Create">Create</option>
+                    <option value="Capture">Capture</option>
+                    <option value="Convert">Convert</option>
+                    <option value="Retain">Retain</option>
+                </select>
+            </div>
+        </div>
+        <div class="form_group">
+            <label for="campaign_description">Campaign Description <span class="mandatory_indicator">*</span></label>
+            <textarea id="campaign_description" name="campaign_description" required></textarea>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="start_date">Start Date <span class="mandatory_indicator">*</span></label>
+                <input type="date" id="start_date" name="start_date" required>
+            </div>
+            <div class="form_group">
+                <label for="end_date">End Date</label>
+                <input type="date" id="end_date" name="end_date">
+            </div>
+        </div>
+        <div class="form_group">
+            <label for="campaign_type">Campaign Type</label>
+            <select id="campaign_type" name="campaign_type">
+                <option value="">Select</option>
+                <option value="Paid Social">Paid Social</option>
+                <option value="Paid Search">Paid Search</option>
+                <option value="Paid Display">Paid Display</option>
+                <option value="Tradeshow/Events">Tradeshow/Events</option>
+                <option value="Calling">Calling</option>
+                <option value="Organic Social">Organic Social</option>
+                <option value="Offline Promotions">Offline Promotions</option>
+                <option value="Public Relations">Public Relations</option>
+                <option value="Email">Email</option>
+                <option value="Digital Event">Digital Event</option>
+                <option value="Sponsorship">Sponsorship</option>
+                <option value="Strategic Campaign">Strategic Campaign</option>
+                <option value="Sales Enablement">Sales Enablement</option>
+                <option value="Website">Website</option>
+            </select>
+        </div>
+
+        <div id="sub_type_section_container" style="display: none;">
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_paid_social">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="paid_social_subgrp">
+                    <div><input type="checkbox" id="st_ps_linkedin" name="sub_type_paid_social[]" value="LinkedIn"><label for="st_ps_linkedin">LinkedIn</label></div>
+                    <div><input type="checkbox" id="st_ps_facebook" name="sub_type_paid_social[]" value="Facebook"><label for="st_ps_facebook">Facebook</label></div>
+                    <div><input type="checkbox" id="st_ps_x" name="sub_type_paid_social[]" value="X"><label for="st_ps_x">X</label></div>
+                    <div><input type="checkbox" id="st_ps_wechat" name="sub_type_paid_social[]" value="WeChat"><label for="st_ps_wechat">WeChat</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_paid_search">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="paid_search_subgrp">
+                    <div><input type="checkbox" id="st_pse_gppc" name="sub_type_paid_search[]" value="Google PPC"><label for="st_pse_gppc">Google PPC</label></div>
+                    <div><input type="checkbox" id="st_pse_bppc" name="sub_type_paid_search[]" value="Bing PPC"><label for="st_pse_bppc">Bing PPC</label></div>
+                    <div><input type="checkbox" id="st_pse_psc" name="sub_type_paid_search[]" value="Paid Search Call"><label for="st_pse_psc">Paid Search Call</label></div>
+                </div>
+            </div>
+             <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_paid_display">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="paid_display_subgrp">
+                    <div><input type="checkbox" id="st_pd_gdn" name="sub_type_paid_display[]" value="Google Display Network"><label for="st_pd_gdn">Google Display Network</label></div>
+                    <div><input type="checkbox" id="st_pd_bing" name="sub_type_paid_display[]" value="Bing Display"><label for="st_pd_bing">Bing Display</label></div>
+                    <div><input type="checkbox" id="st_pd_reddit" name="sub_type_paid_display[]" value="Reddit"><label for="st_pd_reddit">Reddit</label></div>
+                    <div><input type="checkbox" id="st_pd_cs" name="sub_type_paid_display[]" value="Content Syndication"><label for="st_pd_cs">Content Syndication</label></div>
+                    <div><input type="checkbox" id="st_pd_tp" name="sub_type_paid_display[]" value="Trade Publication"><label for="st_pd_tp">Trade Publication</label></div>
+                    <div><input type="checkbox" id="st_pd_6sense" name="sub_type_paid_display[]" value="6Sense Display"><label for="st_pd_6sense">6Sense Display</label></div>
+                    <div><input type="checkbox" id="st_pd_rs" name="sub_type_paid_display[]" value="Rideshare"><label for="st_pd_rs">Rideshare</label></div>
+                    <div><input type="checkbox" id="st_pd_mapp" name="sub_type_paid_display[]" value="Mobile Apps"><label for="st_pd_mapp">Mobile Apps</label></div>
+                    <div><input type="checkbox" id="st_pd_ctv" name="sub_type_paid_display[]" value="CTV"><label for="st_pd_ctv">CTV</label></div>
+                    <div><input type="checkbox" id="st_pd_youtube" name="sub_type_paid_display[]" value="YouTube"><label for="st_pd_youtube">YouTube</label></div>
+                    <div><input type="checkbox" id="st_pd_broadcast" name="sub_type_paid_display[]" value="Broadcast"><label for="st_pd_broadcast">Broadcast</label></div>
+                    <div><input type="checkbox" id="st_pd_wechat" name="sub_type_paid_display[]" value="WeChat Display"><label for="st_pd_wechat">WeChat Display</label></div>
+                    <div><input type="checkbox" id="st_pd_other" name="sub_type_paid_display[]" value="Other"><label for="st_pd_other">Other</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_tradeshow_events">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="tradeshow_events_subgrp">
+                    <div><input type="checkbox" id="st_te_internal" name="sub_type_tradeshow_events[]" value="Internally Hosted Event"><label for="st_te_internal">Internally Hosted Event</label></div>
+                    <div><input type="checkbox" id="st_te_external" name="sub_type_tradeshow_events[]" value="Externally Hosted Event"><label for="st_te_external">Externally Hosted Event</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_calling">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="calling_subgrp">
+                    <div><input type="checkbox" id="st_c_outbound" name="sub_type_calling[]" value="Outbound Calling Program"><label for="st_c_outbound">Outbound Calling Program</label></div>
+                    <div><input type="checkbox" id="st_c_inbound" name="sub_type_calling[]" value="Inbound Calling Program"><label for="st_c_inbound">Inbound Calling Program</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_organic_social">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="organic_social_subgrp">
+                    <div><input type="checkbox" id="st_os_linkedin" name="sub_type_organic_social[]" value="LinkedIn"><label for="st_os_linkedin">LinkedIn</label></div>
+                    <div><input type="checkbox" id="st_os_facebook" name="sub_type_organic_social[]" value="Facebook"><label for="st_os_facebook">Facebook</label></div>
+                    <div><input type="checkbox" id="st_os_x" name="sub_type_organic_social[]" value="X"><label for="st_os_x">X</label></div>
+                    <div><input type="checkbox" id="st_os_reddit" name="sub_type_organic_social[]" value="Reddit"><label for="st_os_reddit">Reddit</label></div>
+                    <div><input type="checkbox" id="st_os_wechat" name="sub_type_organic_social[]" value="WeChat"><label for="st_os_wechat">WeChat</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_offline_promotions">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="offline_promotions_subgrp">
+                    <div><input type="checkbox" id="st_op_print" name="sub_type_offline_promotions[]" value="Print Advertising"><label for="st_op_print">Print Advertising</label></div>
+                    <div><input type="checkbox" id="st_op_billboard" name="sub_type_offline_promotions[]" value="Billboard"><label for="st_op_billboard">Billboard</label></div>
+                    <div><input type="checkbox" id="st_op_brochure" name="sub_type_offline_promotions[]" value="Brochure"><label for="st_op_brochure">Brochure</label></div>
+                    <div><input type="checkbox" id="st_op_direct_mail" name="sub_type_offline_promotions[]" value="Direct Mail"><label for="st_op_direct_mail">Direct Mail</label></div>
+                    <div><input type="checkbox" id="st_op_other" name="sub_type_offline_promotions[]" value="Other"><label for="st_op_other">Other</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_public_relations">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="public_relations_subgrp">
+                    <div><input type="checkbox" id="st_pr_press" name="sub_type_public_relations[]" value="Press Article"><label for="st_pr_press">Press Article</label></div>
+                    <div><input type="checkbox" id="st_pr_paidplacement" name="sub_type_public_relations[]" value="Paid Placement"><label for="st_pr_paidplacement">Paid Placement</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_email">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="email_subgrp">
+                    <div><input type="checkbox" id="st_em_welcome" name="sub_type_email[]" value="Welcome"><label for="st_em_welcome">Welcome</label></div>
+                    <div><input type="checkbox" id="st_em_event_inv" name="sub_type_email[]" value="Event Invitations"><label for="st_em_event_inv">Event Invitations</label></div>
+                    <div><input type="checkbox" id="st_em_nurture" name="sub_type_email[]" value="Nurture"><label for="st_em_nurture">Nurture</label></div>
+                    <div><input type="checkbox" id="st_em_promo" name="sub_type_email[]" value="Promotional"><label for="st_em_promo">Promotional</label></div>
+                    <div><input type="checkbox" id="st_em_enews" name="sub_type_email[]" value="E-Newsletter"><label for="st_em_enews">E-Newsletter</label></div>
+                    <div><input type="checkbox" id="st_em_edu" name="sub_type_email[]" value="Educational"><label for="st_em_edu">Educational</label></div>
+                    <div><input type="checkbox" id="st_em_thought" name="sub_type_email[]" value="Thought Leadership"><label for="st_em_thought">Thought Leadership</label></div>
+                    <div><input type="checkbox" id="st_em_op" name="sub_type_email[]" value="Operational"><label for="st_em_op">Operational</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_digital_event">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="digital_event_subgrp">
+                    <div><input type="checkbox" id="st_de_hosted_webinar" name="sub_type_digital_event[]" value="Internally Hosted Webinar"><label for="st_de_hosted_webinar">Hosted Webinar</label></div>
+                    <div><input type="checkbox" id="st_de_sponsored_webinar" name="sub_type_digital_event[]" value="Sponsored Webinar"><label for="st_de_sponsored_webinar">Sponsored Webinar</label></div>
+                    <div><input type="checkbox" id="st_de_podcast" name="sub_type_digital_event[]" value="Podcast"><label for="st_de_podcast">Podcast</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_sponsorship">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="sponsorship_subgrp">
+                    <div><input type="checkbox" id="st_sp_sports" name="sub_type_sponsorship[]" value="Sports Marketing"><label for="st_sp_sports">Sports Marketing</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_strategic_campaign">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="strategic_campaign_subgrp">
+                    <div><input type="checkbox" id="st_sc_abm" name="sub_type_strategic_campaign[]" value="ABM"><label for="st_sc_abm">ABM</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_sales_enablement">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="sales_enablement_subgrp">
+                    <div><input type="checkbox" id="st_se_event" name="sub_type_sales_enablement[]" value="Event"><label for="st_se_event">Event</label></div>
+                    <div><input type="checkbox" id="st_se_install" name="sub_type_sales_enablement[]" value="Install Base"><label for="st_se_install">Install Base</label></div>
+                    <div><input type="checkbox" id="st_se_spif" name="sub_type_sales_enablement[]" value="SPIF"><label for="st_se_spif">SPIF</label></div>
+                    <div><input type="checkbox" id="st_se_referral" name="sub_type_sales_enablement[]" value="Referral Program"><label for="st_se_referral">Referral Program</label></div>
+                </div>
+            </div>
+            <div class="form_group form_group_checkboxes sub_type_options" id="sub_type_website">
+                <label>Sub-Type</label>
+                <div class="checkbox_group" id="website_subgrp">
+                    <div><input type="checkbox" id="st_web_lead_gen_forms" name="sub_type_website[]" value="Lead Gen Forms"><label for="st_web_lead_gen_forms">Lead Gen Forms</label></div>
+                    <div><input type="checkbox" id="st_web_content_forms" name="sub_type_website[]" value="Content Forms"><label for="st_web_content_forms">Content Forms</label></div>
+                    <div><input type="checkbox" id="st_web_chatbot" name="sub_type_website[]" value="Chatbot"><label for="st_web_chatbot">Chatbot</label></div>
+                </div>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="budget">Budget</label>
+                <input type="number" id="budget" name="budget" step="any">
+            </div>
+            <div class="form_group">
+                <label for="expected_leads">Expected Leads in Campaign</label>
+                <input type="number" id="expected_leads" name="expected_leads" step="1">
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="form_group">
+                <label for="expected_response">Expected Response (%)</label>
+                <input type="number" id="expected_response" name="expected_response" step="any">
+            </div>
+            <div class="form_group">
+                <label for="expected_revenue">Expected Revenue</label>
+                <input type="number" id="expected_revenue" name="expected_revenue" step="any">
+            </div>
+        </div>
+        <div class="form_group form_submit_group">
+            <button type="submit" id="submit_button">Submit</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
